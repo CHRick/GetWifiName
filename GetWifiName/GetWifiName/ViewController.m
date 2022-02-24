@@ -13,6 +13,7 @@
 @interface ViewController ()<CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *wifiNameLable;
 @property (weak, nonatomic) IBOutlet UITextField *apName;
+@property (weak, nonatomic) IBOutlet UITextField *psdTextField;
 @property (nonatomic, strong) CLLocationManager *manager;
 
 @end
@@ -27,11 +28,11 @@
 }
 
 - (IBAction)getWifiName:(UIButton *)sender {
-    
+    [self getWiFiName];
 }
 
 - (IBAction)connectAP:(UIButton *)sender {
-    
+    [self connectDeviceWifi];
 }
 
 - (NSString*)getWiFiName {
@@ -122,7 +123,7 @@
     
     NSString *deviceWifiName = self.apName.text;
     NEHotspotConfigurationManager *manager = [NEHotspotConfigurationManager sharedManager];
-    NSString *password = @"";
+    NSString *password = self.psdTextField.text;
     NEHotspotConfiguration *config = [[NEHotspotConfiguration alloc] initWithSSID:deviceWifiName
                                                                        passphrase:password
                                                                             isWEP:NO];
