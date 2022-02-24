@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -58,7 +59,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfM-00-aIj">
-                                <rect key="frame" x="127" y="415.5" width="160" height="50"/>
+                                <rect key="frame" x="127" y="455.5" width="160" height="50"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="NcV-u5-lef"/>
@@ -72,6 +73,17 @@
                                     <action selector="connectAP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FbT-2c-hgF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzO-OM-NG9">
+                                <rect key="frame" x="50" y="392.5" width="53" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHa-be-ckb">
+                                <rect key="frame" x="107" y="395.5" width="291" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -79,11 +91,16 @@
                             <constraint firstItem="dDB-N6-AAK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Y6-nX-6K1"/>
                             <constraint firstItem="pfM-00-aIj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2vD-Al-nCT"/>
                             <constraint firstItem="0lK-Dy-1ch" firstAttribute="leading" secondItem="FM5-BB-NEV" secondAttribute="trailing" constant="4" id="6gn-K6-A3h"/>
+                            <constraint firstItem="IzO-OM-NG9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="7F9-QT-tbq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0lK-Dy-1ch" secondAttribute="trailing" constant="16" id="L2C-lu-Cwf"/>
                             <constraint firstItem="dDB-N6-AAK" firstAttribute="top" secondItem="0lK-Dy-1ch" secondAttribute="bottom" constant="40" id="Mj7-bT-Buf"/>
                             <constraint firstItem="REB-zR-qlv" firstAttribute="leading" secondItem="pYt-bI-ooP" secondAttribute="trailing" constant="4" id="MjO-nH-dmt"/>
+                            <constraint firstItem="UHa-be-ckb" firstAttribute="leading" secondItem="IzO-OM-NG9" secondAttribute="trailing" constant="4" id="Mlw-bv-NB8"/>
+                            <constraint firstItem="UHa-be-ckb" firstAttribute="top" secondItem="REB-zR-qlv" secondAttribute="bottom" constant="20" id="OMr-Ub-9FJ"/>
                             <constraint firstItem="FM5-BB-NEV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="dDx-2z-MEm"/>
-                            <constraint firstItem="pfM-00-aIj" firstAttribute="top" secondItem="REB-zR-qlv" secondAttribute="bottom" constant="40" id="gFy-9f-qrv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UHa-be-ckb" secondAttribute="trailing" constant="16" id="fOg-oO-drM"/>
+                            <constraint firstItem="pfM-00-aIj" firstAttribute="top" secondItem="REB-zR-qlv" secondAttribute="bottom" constant="80" id="gFy-9f-qrv"/>
+                            <constraint firstItem="IzO-OM-NG9" firstAttribute="centerY" secondItem="UHa-be-ckb" secondAttribute="centerY" id="mMZ-3s-HpL"/>
                             <constraint firstItem="pYt-bI-ooP" firstAttribute="centerY" secondItem="REB-zR-qlv" secondAttribute="centerY" id="nlI-Q0-4cZ"/>
                             <constraint firstItem="pYt-bI-ooP" firstAttribute="top" secondItem="FM5-BB-NEV" secondAttribute="bottom" constant="150" id="p1M-4T-acZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="REB-zR-qlv" secondAttribute="trailing" constant="16" id="p8o-2T-8yf"/>
@@ -94,6 +111,7 @@
                     </view>
                     <connections>
                         <outlet property="apName" destination="REB-zR-qlv" id="Fhg-SC-xBV"/>
+                        <outlet property="psdTextField" destination="UHa-be-ckb" id="adR-8W-QLb"/>
                         <outlet property="wifiNameLable" destination="0lK-Dy-1ch" id="yIV-gf-H2S"/>
                     </connections>
                 </viewController>
